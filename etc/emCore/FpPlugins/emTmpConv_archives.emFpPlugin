@@ -1,0 +1,36 @@
+#%rec:emFpPlugin%#
+
+FileTypes = {
+ ".7z"
+ ".ar" ".a" ".deb" ".ipk"
+ ".arc"
+ ".arj"
+ ".bz2" ".bz"
+ ".gz" ".z"
+ ".lzh" ".lha"
+ ".lzma"
+ ".lzo"
+ ".rar"
+ ".tar"
+ ".tar.bz2" ".tbz2" ".tgj" ".tar.bz" ".tbz"
+ ".tar.gz" ".tgz" ".tar.z" ".taz"
+ ".tar.lzma" ".tlz"
+ ".tar.lzo" ".tzo"
+ ".tar.xz" ".txz"
+ ".xz"
+ ".zip" ".jar"
+ ".zoo"
+}
+Priority = 0.5
+Library = "emTmpConv"
+Function = "emTmpConvFpPluginFunc"
+Properties = {
+ {
+  Name="OutFileEnding"
+  Value=".dir"
+ }
+ {
+  Name="Command"
+  Value="mkdir \"$OUTFILE\" && cd \"$OUTFILE\" && exec \"$EM_DIR/res/emFileMan/scripts/emArch.sh\" unpack -- \"$INFILE\" > /dev/null"
+ }
+}
